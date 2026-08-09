@@ -1,0 +1,84 @@
+<section id="contact" class="py-20 bg-slate-50">
+  <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+    <app-section-header
+      title="Get in Touch"
+      subtitle="Have a project in mind? Let's talk about it." />
+
+    @if (contactService.submitSuccess()) {
+      <div class="bg-green-50 border border-green-200 rounded-lg p-6 text-center">
+        <p class="text-green-800 font-medium">Message sent successfully!</p>
+        <p class="mt-1 text-sm text-green-600">Thank you for reaching out. I'll get back to you soon.</p>
+      </div>
+    } @else {
+      <form [formGroup]="contactForm" (ngSubmit)="onSubmit()" class="space-y-6">
+        <div>
+          <label for="name" class="block text-sm font-medium text-slate-700 mb-1">Name</label>
+          <input
+            id="name"
+            type="text"
+            formControlName="name"
+            class="w-full px-4 py-3 rounded-lg border border-slate-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 outline-none transition-all"
+            placeholder="Your name" />
+          @if (hasError('name', 'required')) {
+            <p class="mt-1 text-sm text-red-500">Name is required.</p>
+          }
+          @if (hasError('name', 'minlength')) {
+            <p class="mt-1 text-sm text-red-500">Name must be at least 2 characters.</p>
+          }
+        </div>
+
+        <div>
+          <label for="email" class="block text-sm font-medium text-slate-700 mb-1">Email</label>
+          <input
+            id="email"
+            type="email"
+            formControlName="email"
+            class="w-full px-4 py-3 rounded-lg border border-slate-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 outline-none transition-all"
+            placeholder="your@email.com" />
+          @if (hasError('email', 'required')) {
+            <p class="mt-1 text-sm text-red-500">Email is required.</p>
+          }
+          @if (hasError('email', 'email')) {
+            <p class="mt-1 text-sm text-red-500">Please enter a valid email address.</p>
+          }
+        </div>
+
+        <div>
+          <label for="message" class="block text-sm font-medium text-slate-700 mb-1">Message</label>
+          <textarea
+            id="message"
+            formControlName="message"
+            rows="5"
+            class="w-full px-4 py-3 rounded-lg border border-slate-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 outline-none transition-all resize-none"
+            placeholder="Tell me about your project..."></textarea>
+          @if (hasError('message', 'required')) {
+            <p class="mt-1 text-sm text-red-500">Message is required.</p>
+          }
+          @if (hasError('message', 'minlength')) {
+            <p class="mt-1 text-sm text-red-500">Message must be at least 10 characters.</p>
+          }
+        </div>
+
+        @if (contactService.error()) {
+          <div class="bg-red-50 border border-red-200 rounded-lg p-4">
+            <p class="text-sm text-red-600">{{ contactService.error() }}</p>
+          </div>
+        }
+
+        <button
+          type="submit"
+          class="w-full px-6 py-3 bg-blue-600 hover:bg-blue-700 disabled:bg-blue-300 text-white font-semibold rounded-lg shadow-sm hover:shadow transition-all cursor-pointer disabled:cursor-not-allowed"
+          [disabled]="contactService.isSubmitting()">
+          @if (contactService.isSubmitting()) {
+            <span class="flex items-center justify-center gap-2">
+              <span class="animate-spin inline-block w-4 h-4 border-2 border-white border-t-transparent rounded-full"></span>
+              Sending...
+            </span>
+          } @else {
+            Send Message
+          }
+        </button>
+      </form>
+    }
+  </div>
+</section>
