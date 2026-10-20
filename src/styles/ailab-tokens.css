@@ -1,0 +1,101 @@
+/* =================================================================
+   AiLab Universal Design Tokens (v1.0.0)
+   Importado desde AICSL (HND-CSL-01 / Hito MS-05)
+   Soporta CSS Custom Properties estándar y Tailwind CSS v4 (@theme)
+   ================================================================= */
+
+:root {
+  /* --- Primitives: Spacing --- */
+  --ailab-spacing-none: 0px;
+  --ailab-spacing-2xs: 2px;
+  --ailab-spacing-xs: 4px;
+  --ailab-spacing-sm: 8px;
+  --ailab-spacing-md: 12px;
+  --ailab-spacing-base: 16px;
+  --ailab-spacing-lg: 20px;
+  --ailab-spacing-xl: 24px;
+  --ailab-spacing-2xl: 32px;
+  --ailab-spacing-3xl: 40px;
+  --ailab-spacing-4xl: 48px;
+  --ailab-spacing-5xl: 64px;
+
+  /* --- Primitives: Radii --- */
+  --ailab-radius-none: 0px;
+  --ailab-radius-sm: 4px;
+  --ailab-radius-md: 8px;
+  --ailab-radius-lg: 12px;
+  --ailab-radius-xl: 16px;
+  --ailab-radius-full: 9999px;
+
+  /* --- Primitives: Shadows --- */
+  --ailab-shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --ailab-shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+  --ailab-shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
+  --ailab-shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+
+  /* --- Semantic Colors: Light Mode --- */
+  --ailab-color-bg-canvas: #f8fafc;
+  --ailab-color-bg-surface: #ffffff;
+  --ailab-color-bg-surfaceSubtle: #f1f5f9;
+  --ailab-color-bg-surfaceElevated: #ffffff;
+  --ailab-color-text-primary: #0f172a;
+  --ailab-color-text-secondary: #475569;
+  --ailab-color-text-muted: #94a3b8;
+  --ailab-color-text-inverse: #ffffff;
+  --ailab-color-border-subtle: #e2e8f0;
+  --ailab-color-border-default: #cbd5e1;
+  --ailab-color-border-focus: #6366f1;
+  --ailab-color-primary-default: #4f46e5;
+  --ailab-color-primary-hover: #4338ca;
+  --ailab-color-primary-fg: #ffffff;
+  --ailab-color-primary-subtle: #eef2ff;
+  --ailab-color-feedback-success: #10b981;
+  --ailab-color-feedback-warning: #f59e0b;
+  --ailab-color-feedback-error: #ef4444;
+  --ailab-color-feedback-info: #06b6d4;
+}
+
+.dark, [data-theme='dark'] {
+  /* --- Semantic Colors: Dark Mode (Obsidian) --- */
+  --ailab-color-bg-canvas: #020617;
+  --ailab-color-bg-surface: #0f172a;
+  --ailab-color-bg-surfaceSubtle: #1e293b;
+  --ailab-color-bg-surfaceElevated: #1e293b;
+  --ailab-color-text-primary: #f8fafc;
+  --ailab-color-text-secondary: #94a3b8;
+  --ailab-color-text-muted: #64748b;
+  --ailab-color-text-inverse: #020617;
+  --ailab-color-border-subtle: #1e293b;
+  --ailab-color-border-default: #334155;
+  --ailab-color-border-focus: #818cf8;
+  --ailab-color-primary-default: #6366f1;
+  --ailab-color-primary-hover: #818cf8;
+  --ailab-color-primary-fg: #ffffff;
+  --ailab-color-primary-subtle: #1e1b4b;
+  --ailab-color-feedback-success: #10b981;
+  --ailab-color-feedback-warning: #f59e0b;
+  --ailab-color-feedback-error: #ef4444;
+  --ailab-color-feedback-info: #06b6d4;
+}
+
+@theme {
+  --color-ailab-bg-canvas: var(--ailab-color-bg-canvas);
+  --color-ailab-bg-surface: var(--ailab-color-bg-surface);
+  --color-ailab-bg-surface-subtle: var(--ailab-color-bg-surfaceSubtle);
+  --color-ailab-text-primary: var(--ailab-color-text-primary);
+  --color-ailab-text-secondary: var(--ailab-color-text-secondary);
+  --color-ailab-text-muted: var(--ailab-color-text-muted);
+  --color-ailab-border-subtle: var(--ailab-color-border-subtle);
+  --color-ailab-border-default: var(--ailab-color-border-default);
+  --color-ailab-primary: var(--ailab-color-primary-default);
+  --color-ailab-primary-hover: var(--ailab-color-primary-hover);
+  --color-ailab-primary-fg: var(--ailab-color-primary-fg);
+  --color-ailab-success: var(--ailab-color-feedback-success);
+  --color-ailab-warning: var(--ailab-color-feedback-warning);
+  --color-ailab-error: var(--ailab-color-feedback-error);
+  --color-ailab-info: var(--ailab-color-feedback-info);
+  --radius-ailab-sm: var(--ailab-radius-sm);
+  --radius-ailab-md: var(--ailab-radius-md);
+  --radius-ailab-lg: var(--ailab-radius-lg);
+  --radius-ailab-xl: var(--ailab-radius-xl);
+}

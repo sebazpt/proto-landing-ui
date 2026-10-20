@@ -1,17 +1,46 @@
 @import "tailwindcss";
+@import "./styles/ailab-tokens.css";
 
 :root {
-  --color-primary: #3b82f6;
-  --color-primary-hover: #2563eb;
-  --color-secondary: #64748b;
-  --color-success: #22c55e;
-  --color-error: #ef4444;
-  --color-text-primary: #1e293b;
-  --color-text-secondary: #64748b;
-  --color-text-muted: #94a3b8;
-  --color-bg-primary: #ffffff;
-  --color-bg-secondary: #f8fafc;
-  --color-border: #e2e8f0;
+  --color-primary: var(--ailab-color-primary-default);
+  --color-primary-hover: var(--ailab-color-primary-hover);
+  --color-secondary: var(--ailab-color-text-secondary);
+  --color-success: var(--ailab-color-feedback-success);
+  --color-error: var(--ailab-color-feedback-error);
+  --color-text-primary: var(--ailab-color-text-primary);
+  --color-text-secondary: var(--ailab-color-text-secondary);
+  --color-text-muted: var(--ailab-color-text-muted);
+  --color-bg-primary: var(--ailab-color-bg-surface);
+  --color-bg-secondary: var(--ailab-color-bg-canvas);
+  --color-border: var(--ailab-color-border-subtle);
+}
+
+.dark, [data-theme='dark'] {
+  --color-primary: var(--ailab-color-primary-default);
+  --color-primary-hover: var(--ailab-color-primary-hover);
+  --color-secondary: var(--ailab-color-text-secondary);
+  --color-success: var(--ailab-color-feedback-success);
+  --color-error: var(--ailab-color-feedback-error);
+  --color-text-primary: var(--ailab-color-text-primary);
+  --color-text-secondary: var(--ailab-color-text-secondary);
+  --color-text-muted: var(--ailab-color-text-muted);
+  --color-bg-primary: var(--ailab-color-bg-surface);
+  --color-bg-secondary: var(--ailab-color-bg-canvas);
+  --color-border: var(--ailab-color-border-subtle);
+}
+
+@theme {
+  --color-blue-50: var(--ailab-color-primary-subtle);
+  --color-blue-100: var(--ailab-color-primary-subtle);
+  --color-blue-600: var(--ailab-color-primary-default);
+  --color-blue-700: var(--ailab-color-primary-hover);
+  --color-blue-800: var(--ailab-color-primary-hover);
+  --color-slate-50: var(--ailab-color-bg-canvas);
+  --color-slate-100: var(--ailab-color-bg-surface-subtle);
+  --color-slate-200: var(--ailab-color-border-subtle);
+  --color-slate-300: var(--ailab-color-border-default);
+  --color-slate-600: var(--ailab-color-text-secondary);
+  --color-slate-900: var(--ailab-color-text-primary);
 }
 
 html {
